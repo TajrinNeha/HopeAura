@@ -1,0 +1,14 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">HopeAura logo</title>
+  <desc id="desc">A heart shield held by two helping hands.</desc>
+  <rect width="128" height="128" rx="34" fill="#F8F9FA"/>
+  <circle cx="64" cy="64" r="48" fill="#D9EDF8"/>
+  <path d="M64 33C73 22 94 27 94 45C94 62 75 72 64 85C53 72 34 62 34 45C34 27 55 22 64 33Z" fill="#D62828"/>
+  <path d="M64 39C70.8 30.7 86.6 34.4 86.6 47.8C86.6 60.5 72.2 68.1 64 77.9C55.8 68.1 41.4 60.5 41.4 47.8C41.4 34.4 57.2 30.7 64 39Z" fill="white" fill-opacity="0.32"/>
+  <path d="M25 77C36 80 43 91 56 95" stroke="#003049" stroke-width="8" stroke-linecap="round"/>
+  <path d="M103 77C92 80 85 91 72 95" stroke="#003049" stroke-width="8" stroke-linecap="round"/>
+  <path d="M43 98C50 107 78 107 85 98" stroke="#669BBC" stroke-width="8" stroke-linecap="round"/>
+  <path d="M64 28V18" stroke="#003049" stroke-width="7" stroke-linecap="round"/>
+  <path d="M80 31L86 22" stroke="#669BBC" stroke-width="6" stroke-linecap="round"/>
+  <path d="M48 31L42 22" stroke="#669BBC" stroke-width="6" stroke-linecap="round"/>
+</svg>

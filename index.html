@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HopeAura is a disaster relief e-commerce and emergency support platform for victims, donors, NGOs, volunteers, and administrators." />
+  <title>HopeAura | Disaster Relief E-Commerce System</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+
+  <header class="site-header" id="home">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="HopeAura home">
+        <img src="assets/logo.svg" alt="HopeAura logo" />
+        <span>HopeAura</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="mainNav">
+        <a href="#sos">SOS</a>
+        <a href="#relief">Relief</a>
+        <a href="#donate">Donate</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#shelter">Shelter</a>
+        <a href="#tracking">Tracking</a>
+        <a href="#dashboard" class="admin-link">Dashboard</a>
+      </div>
+    </nav>
+
+    <section class="hero section-wrap">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Together We Can Save More Lives</p>
+        <h1>Fast, transparent, and human-focused disaster relief support.</h1>
+        <p class="hero-copy">
+          HopeAura connects disaster-affected people with emergency supplies, verified donors, NGOs, shelters, and volunteers through one responsive web platform.
+        </p>
+        <div class="hero-actions">
+          <a href="#sos" class="btn btn-danger">Send SOS Now</a>
+          <a href="#donate" class="btn btn-ghost">Support Relief</a>
+        </div>
+        <div class="trust-row" aria-label="Platform strengths">
+          <span>Verified requests</span>
+          <span>Live status updates</span>
+          <span>Volunteer coordination</span>
+        </div>
+      </div>
+
+      <div class="hero-panel reveal" aria-label="Emergency response summary">
+        <div class="pulse-orb" aria-hidden="true"></div>
+        <div class="status-card urgent">
+          <span>Priority</span>
+          <strong>Emergency SOS</strong>
+          <small>Food, medicine, water and rescue support</small>
+        </div>
+        <div class="mini-grid">
+          <div>
+            <strong id="heroRequests">0</strong>
+            <span>Open Requests</span>
+          </div>
+          <div>
+            <strong id="heroVolunteers">0</strong>
+            <span>Active Volunteers</span>
+          </div>
+          <div>
+            <strong id="heroDonations">৳0</strong>
+            <span>Relief Fund</span>
+          </div>
+        </div>
+        <img class="workflow-image" src="assets/workflow.svg" alt="HopeAura disaster relief workflow illustration" />
+      </div>
+    </section>
+  </header>
+
+  <main id="mainContent">
+    <section class="section-wrap problem-section reveal" aria-labelledby="problemTitle">
+      <div class="section-heading">
+        <p class="eyebrow">Why HopeAura</p>
+        <h2 id="problemTitle">Disaster help should be quick, organized, and transparent.</h2>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card">
+          <span class="card-icon">⏱</span>
+          <h3>Delayed response</h3>
+          <p>Victims often wait because needs are not reported or verified quickly.</p>
+        </article>
+        <article class="problem-card">
+          <span class="card-icon">🧭</span>
+          <h3>Poor coordination</h3>
+          <p>Volunteers and NGOs need a clear view of urgent areas and available supplies.</p>
+        </article>
+        <article class="problem-card">
+          <span class="card-icon">🤝</span>
+          <h3>Trust gap</h3>
+          <p>Donors need visible progress to know where their support is going.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap sos-section reveal" id="sos" aria-labelledby="sosTitle">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Emergency SOS</p>
+          <h2 id="sosTitle">Request help in less than a minute.</h2>
+        </div>
+        <p>Use this form to create a verified emergency request. The request is saved locally in this demo and appears in the admin dashboard instantly.</p>
+      </div>
+
+      <div class="two-column">
+        <form class="smart-form" id="sosForm">
+          <div class="form-row two">
+            <label>
+              Full name
+              <input type="text" name="name" placeholder="Example: Rahima Begum" required />
+            </label>
+            <label>
+              Mobile number
+              <input type="tel" name="phone" placeholder="01XXXXXXXXX" pattern="[0-9+\-\s]{8,16}" required />
+            </label>
+          </div>
+
+          <label>
+            Affected location
+            <div class="input-action">
+              <input type="text" name="location" id="sosLocation" placeholder="District, area, shelter or landmark" required />
+              <button type="button" class="btn btn-small" id="detectLocation">Use GPS</button>
+            </div>
+          </label>
+
+          <div class="form-row two">
+            <label>
+              Emergency type
+              <select name="type" required>
+                <option value="Food & Water">Food & Water</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Rescue Support">Rescue Support</option>
+                <option value="Shelter">Shelter</option>
+                <option value="Emergency Supplies">Emergency Supplies</option>
+              </select>
+            </label>
+            <label>
+              Priority level
+              <select name="priority" required>
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Short message
+            <textarea name="message" rows="4" placeholder="Write the exact need: number of people, items needed, and current situation." required></textarea>
+          </label>
+
+          <button class="btn btn-danger full" type="submit">Submit SOS Request</button>
+        </form>
+
+        <aside class="response-box" aria-live="polite">
+          <div class="alert-preview" id="sosResult">
+            <span class="card-icon danger">!</span>
+            <h3>No active form submission yet</h3>
+            <p>After submitting, your request ID and live progress will appear here.</p>
+          </div>
+          <div class="care-note">
+            <strong>Human support note</strong>
+            <p>Be specific about children, elderly people, medicine, and water needs so volunteers can respond with the correct relief package.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-wrap reveal" id="relief" aria-labelledby="reliefTitle">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Relief E-Commerce</p>
+          <h2 id="reliefTitle">Request essential relief packages.</h2>
+        </div>
+        <p>Choose only the items needed. This keeps relief distribution fair and avoids duplicate donations.</p>
+      </div>
+
+      <div class="relief-layout">
+        <div class="relief-products" id="reliefProducts"></div>
+        <aside class="cart-panel">
+          <h3>Relief Basket</h3>
+          <div id="basketItems" class="basket-items empty">No item selected yet.</div>
+          <div class="cart-total">
+            <span>Total estimated support</span>
+            <strong id="basketTotal">৳0</strong>
+          </div>
+          <label>
+            Delivery area
+            <input type="text" id="reliefArea" placeholder="Example: Char Rajibpur, Kurigram" />
+          </label>
+          <button class="btn btn-primary full" id="placeReliefOrder">Place Relief Request</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-wrap donation-section reveal" id="donate" aria-labelledby="donateTitle">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Donation Management</p>
+          <h2 id="donateTitle">Donate money or products with visible impact.</h2>
+        </div>
+        <p>This frontend demo records donation pledges and shows transparent fund progress without using any real payment gateway.</p>
+      </div>
+
+      <div class="donation-grid">
+        <form class="smart-form donation-form" id="donationForm">
+          <div class="tabs" role="tablist" aria-label="Donation type">
+            <button type="button" class="tab active" data-donation-type="Money">Money</button>
+            <button type="button" class="tab" data-donation-type="Products">Products</button>
+          </div>
+          <input type="hidden" name="donationType" id="donationType" value="Money" />
+
+          <div class="form-row two">
+            <label>
+              Donor name
+              <input type="text" name="donor" placeholder="Your name or organization" required />
+            </label>
+            <label>
+              Mobile / Email
+              <input type="text" name="contact" placeholder="Contact information" required />
+            </label>
+          </div>
+          <label>
+            Amount or product details
+            <input type="text" name="details" placeholder="৳1000 or 50 water bottles" required />
+          </label>
+          <label>
+            Preferred support area
+            <input type="text" name="area" placeholder="District or emergency zone" required />
+          </label>
+          <button type="submit" class="btn btn-danger full">Submit Donation Pledge</button>
+        </form>
+
+        <div class="impact-board">
+          <h3>Relief Fund Transparency</h3>
+          <div class="progress-list" id="progressList"></div>
+          <div class="recent-donations">
+            <h4>Recent Pledges</h4>
+            <div id="recentDonations"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap reveal" id="volunteer" aria-labelledby="volunteerTitle">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Volunteer Coordination</p>
+          <h2 id="volunteerTitle">Accept verified delivery and support tasks.</h2>
+        </div>
+        <p>Volunteers can view urgent tasks, accept responsibility, and update the delivery progress.</p>
+      </div>
+
+      <div class="volunteer-layout">
+        <form class="smart-form compact" id="volunteerForm">
+          <h3>Join as Volunteer</h3>
+          <label>
+            Name
+            <input type="text" name="volunteerName" placeholder="Volunteer name" required />
+          </label>
+          <label>
+            Available district
+            <input type="text" name="district" placeholder="Example: Barishal" required />
+          </label>
+          <label>
+            Skill
+            <select name="skill" required>
+              <option>Relief delivery</option>
+              <option>First aid</option>
+              <option>Rescue support</option>
+              <option>Shelter coordination</option>
+            </select>
+          </label>
+          <button class="btn btn-primary full" type="submit">Register Volunteer</button>
+        </form>
+
+        <div class="task-column">
+          <div class="task-toolbar">
+            <h3>Priority Tasks</h3>
+            <select id="taskFilter" aria-label="Filter tasks">
+              <option value="All">All tasks</option>
+              <option value="Critical">Critical</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+            </select>
+          </div>
+          <div id="taskList" class="task-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap shelter-section reveal" id="shelter" aria-labelledby="shelterTitle">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Shelter Finder</p>
+          <h2 id="shelterTitle">Find safe shelter and emergency contacts.</h2>
+        </div>
+        <p>Use the district filter to quickly identify available shelters and capacity.</p>
+      </div>
+
+      <div class="shelter-layout">
+        <div class="map-card" aria-label="Illustrated relief map">
+          <div class="map-pin pin-one">SOS</div>
+          <div class="map-pin pin-two">Food</div>
+          <div class="map-pin pin-three">Shelter</div>
+          <div class="route route-a"></div>
+          <div class="route route-b"></div>
+          <div class="map-grid-lines"></div>
+        </div>
+        <div class="shelter-panel">
+          <div class="task-toolbar">
+            <h3>Available Shelters</h3>
+            <select id="shelterFilter" aria-label="Filter shelters by district">
+              <option value="All">All districts</option>
+            </select>
+          </div>
+          <div id="shelterList" class="shelter-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap reveal" id="tracking" aria-labelledby="trackingTitle">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Real-Time Tracking</p>
+          <h2 id="trackingTitle">Track request progress with a request ID.</h2>
+        </div>
+        <p>Each request follows a clear path: Received, Verified, Assigned, On the Way, Delivered.</p>
+      </div>
+
+      <div class="tracking-card">
+        <form id="trackingForm" class="tracking-search">
+          <input type="text" id="trackingInput" placeholder="Enter request ID, e.g. HA-1001" aria-label="Request ID" />
+          <button class="btn btn-primary" type="submit">Track</button>
+        </form>
+        <div id="trackingResult" class="tracking-result"></div>
+      </div>
+    </section>
+
+    <section class="section-wrap dashboard-section reveal" id="dashboard" aria-labelledby="dashboardTitle">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">NGO / Admin Dashboard</p>
+          <h2 id="dashboardTitle">Monitor relief operations from one place.</h2>
+        </div>
+        <button class="btn btn-ghost" id="resetDemo">Reset Demo Data</button>
+      </div>
+
+      <div class="kpi-grid" id="kpiGrid"></div>
+
+      <div class="dashboard-grid">
+        <div class="dashboard-card large">
+          <div class="task-toolbar">
+            <h3>Emergency Requests</h3>
+            <select id="requestStatusFilter" aria-label="Filter requests by status">
+              <option value="All">All status</option>
+              <option value="Received">Received</option>
+              <option value="Verified">Verified</option>
+              <option value="Assigned">Assigned</option>
+              <option value="On the Way">On the Way</option>
+              <option value="Delivered">Delivered</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Need</th>
+                  <th>Location</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="requestTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h3>Operational Analytics</h3>
+          <div id="analyticsBars" class="analytics-bars"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home">
+          <img src="assets/logo.svg" alt="HopeAura logo" />
+          <span>HopeAura</span>
+        </a>
+        <p>Disaster Relief E-Commerce System for emergency support, transparent donation, volunteer coordination, shelter discovery, and relief tracking.</p>
+      </div>
+      <div>
+        <h3>Emergency Flow</h3>
+        <p>SOS Request → Admin Verification → Volunteer Assignment → Relief Delivery → User Confirmation.</p>
+      </div>
+      <div>
+        <h3>Demo Note</h3>
+        <p>This is a frontend-only academic project using HTML, CSS, JavaScript, and browser localStorage.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
